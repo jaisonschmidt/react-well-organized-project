@@ -1,16 +1,20 @@
 import Axios from 'axios';
-
-const API_URL = "https://jsonplaceholder.typicode.com";
+import Config from '../../config';
 
 class UserService {
     async getAllUsers() {
-        const url = `${API_URL}/users/`;
+        const url = `${Config.URL_API}/users/`;
         return Axios.get(url).then( response => response.data )
     }
 
     async getUser(id) {
-        const url = `${API_URL}/users/${id}`;
+        const url = `${Config.URL_API}/users/${id}`;
         return Axios.get(url).then( response => response.data );
+    }
+
+    async postNewUser(user) {
+        const url = `${Config.URL_API}/users/`;
+        return Axios.post(url, user).then( response => response.data );
     }
 }
 

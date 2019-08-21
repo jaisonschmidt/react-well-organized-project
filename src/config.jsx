@@ -1,0 +1,3 @@
+export default {
+    URL_API : 'https://jsonplaceholder.typicode.com'
+}
